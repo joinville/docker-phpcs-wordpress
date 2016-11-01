@@ -1,5 +1,8 @@
 FROM php:7.0-alpine
 
+# Required by phpcbf
+RUN apk add --no-cache patch
+
 # To build under proxy, use: docker build --build-arg "http_proxy=$http_proxy" 
 RUN if test -n "$http_proxy"; then pear config-set http_proxy "$http_proxy"; fi
 
