@@ -29,3 +29,15 @@ docker run -v /path/to/php/files/:/scripts/ joinville/phpcs-wordpress phpcs  --s
 # Fix code standards issues
 docker run -v /path/to/php/files/:/scripts/ joinville/phpcs-wordpress phpcbf --standard=WordPress-Core /scripts/
 ```
+
+## GitLab CI example
+
+```yaml
+# Run PHP_CodeSniffer in our custom WordPress plugin and theme
+code_lint:
+  stage: test
+  image: joinville/phpcs-wordpress
+  script:
+    - phpcs --standard=WordPress-Core wp-content/plugins/my-awesome-plugin
+    - phpcs --standard=WordPress-Core --ignore=/bootstrap/,/inc/ wp-content/themes/my-awesome-theme
+```
