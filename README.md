@@ -4,10 +4,10 @@ Docker image for [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
 
 ```bash
 # No proxy
-docker build --no-cache -t phpcs-wordpress .
+docker build --no-cache -t joinville/phpcs-wordpress .
 
 # Under proxy
-docker build --no-cache -t phpcs-wordpress --build-arg "http_proxy=$http_proxy" .
+docker build --no-cache -t joinville/phpcs-wordpress --build-arg "http_proxy=$http_proxy" .
 ```
 
 ## Test
@@ -15,7 +15,7 @@ docker build --no-cache -t phpcs-wordpress --build-arg "http_proxy=$http_proxy" 
 Show the available standards:
 
 ```console
-$ docker run phpcs-wordpress phpcs -i
+$ docker run joinville/phpcs-wordpress phpcs -i
 The installed coding standards are MySource, PEAR, PHPCS, Squiz, Zend, PSR2, PSR1, WordPress, WordPress-Extra, WordPress-Docs, WordPress-Core and WordPress-VIP
 $
 ```
@@ -24,8 +24,8 @@ $
 
 ```bash
 # Check for code standards issues
-docker run -v /path/to/php/files/:/scripts/ phpcs-wordpress phpcs  --standard=WordPress-Core /scripts/
+docker run -v /path/to/php/files/:/scripts/ joinville/phpcs-wordpress phpcs  --standard=WordPress-Core /scripts/
 
 # Fix code standards issues
-docker run -v /path/to/php/files/:/scripts/ phpcs-wordpress phpcbf --standard=WordPress-Core /scripts/
+docker run -v /path/to/php/files/:/scripts/ joinville/phpcs-wordpress phpcbf --standard=WordPress-Core /scripts/
 ```
