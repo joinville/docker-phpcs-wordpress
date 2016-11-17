@@ -1,5 +1,7 @@
 Docker image for [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) already configured for [WordPress Coding Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards).
 
+* https://hub.docker.com/r/joinville/phpcs-wordpress/
+
 ## Build
 
 ```bash
